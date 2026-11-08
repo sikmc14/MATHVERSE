@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-universe: #060913;
+    --bg-panel: rgba(13, 20, 36, 0.75);
+    --border-subtle: rgba(56, 189, 248, 0.15);
+    --border-accent: rgba(56, 189, 248, 0.4);
+    --electric-cyan: #38bdf8;
+    --electric-blue: #3b82f6;
+    --neon-purple: #a855f7;
+  }
+
+  body {
+    background-color: #060913;
+    color: #f1f5f9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  [dir="rtl"] body {
+    font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090e1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+.math-font {
+  font-family: 'Fira Code', monospace;
+}
+
+.katex-display {
+  margin: 0.5em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+
+.glass-panel {
+  background: rgba(13, 22, 40, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.glass-panel-glow {
+  background: rgba(15, 25, 48, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.15);
+}
+
+.electric-glow {
+  box-shadow: 0 0 20px -3px rgba(56, 189, 248, 0.35);
+}
+
+/* Ensure math formulas remain LTR even in RTL mode */
+.math-expression-display {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}

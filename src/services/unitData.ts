@@ -1,0 +1,108 @@
+import { UnitCategory } from '../types/mathverse';
+
+export const unitCategories: UnitCategory[] = [
+  {
+    id: 'length',
+    name: { en: 'Length & Distance', ar: 'الطول والمسافة' },
+    iconName: 'Ruler',
+    units: [
+      { id: 'm', symbol: 'm', name: { en: 'Meters', ar: 'متر' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'km', symbol: 'km', name: { en: 'Kilometers', ar: 'كيلومتر' }, toBase: (v) => v * 1000, fromBase: (v) => v / 1000 },
+      { id: 'cm', symbol: 'cm', name: { en: 'Centimeters', ar: 'سنتيمتر' }, toBase: (v) => v / 100, fromBase: (v) => v * 100 },
+      { id: 'mm', symbol: 'mm', name: { en: 'Millimeters', ar: 'مليمتر' }, toBase: (v) => v / 1000, fromBase: (v) => v * 1000 },
+      { id: 'um', symbol: 'µm', name: { en: 'Micrometers', ar: 'ميكرومتر' }, toBase: (v) => v * 1e-6, fromBase: (v) => v * 1e6 },
+      { id: 'nm', symbol: 'nm', name: { en: 'Nanometers', ar: 'نانومتر' }, toBase: (v) => v * 1e-9, fromBase: (v) => v * 1e9 },
+      { id: 'mi', symbol: 'mi', name: { en: 'Miles', ar: 'ميل' }, toBase: (v) => v * 1609.344, fromBase: (v) => v / 1609.344 },
+      { id: 'yd', symbol: 'yd', name: { en: 'Yards', ar: 'ياردة' }, toBase: (v) => v * 0.9144, fromBase: (v) => v / 0.9144 },
+      { id: 'ft', symbol: 'ft', name: { en: 'Feet', ar: 'قدم' }, toBase: (v) => v * 0.3048, fromBase: (v) => v / 0.3048 },
+      { id: 'in', symbol: 'in', name: { en: 'Inches', ar: 'بوصة' }, toBase: (v) => v * 0.0254, fromBase: (v) => v / 0.0254 },
+      { id: 'nmi', symbol: 'NM', name: { en: 'Nautical Miles', ar: 'ميل بحري' }, toBase: (v) => v * 1852, fromBase: (v) => v / 1852 },
+      { id: 'ly', symbol: 'ly', name: { en: 'Light Years', ar: 'سنة ضوئية' }, toBase: (v) => v * 9.46073e15, fromBase: (v) => v / 9.46073e15 },
+      { id: 'au', symbol: 'AU', name: { en: 'Astronomical Units', ar: 'وحدة فلكية' }, toBase: (v) => v * 1.495978707e11, fromBase: (v) => v / 1.495978707e11 },
+    ],
+  },
+  {
+    id: 'mass',
+    name: { en: 'Mass & Weight', ar: 'الكتلة والوزن' },
+    iconName: 'Scale',
+    units: [
+      { id: 'kg', symbol: 'kg', name: { en: 'Kilograms', ar: 'كيلوجرام' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'g', symbol: 'g', name: { en: 'Grams', ar: 'جرام' }, toBase: (v) => v / 1000, fromBase: (v) => v * 1000 },
+      { id: 'mg', symbol: 'mg', name: { en: 'Milligrams', ar: 'مليجرام' }, toBase: (v) => v * 1e-6, fromBase: (v) => v * 1e6 },
+      { id: 't', symbol: 't', name: { en: 'Metric Tonnes', ar: 'طن متري' }, toBase: (v) => v * 1000, fromBase: (v) => v / 1000 },
+      { id: 'lb', symbol: 'lb', name: { en: 'Pounds', ar: 'رطل' }, toBase: (v) => v * 0.45359237, fromBase: (v) => v / 0.45359237 },
+      { id: 'oz', symbol: 'oz', name: { en: 'Ounces', ar: 'أونصة' }, toBase: (v) => v * 0.028349523, fromBase: (v) => v / 0.028349523 },
+    ],
+  },
+  {
+    id: 'temperature',
+    name: { en: 'Temperature', ar: 'درجة الحرارة' },
+    iconName: 'Thermometer',
+    units: [
+      { id: 'c', symbol: '°C', name: { en: 'Celsius', ar: 'سلسيوس' }, toBase: (v) => v + 273.15, fromBase: (v) => v - 273.15 },
+      { id: 'k', symbol: 'K', name: { en: 'Kelvin', ar: 'كلفن' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'f', symbol: '°F', name: { en: 'Fahrenheit', ar: 'فهرنهايت' }, toBase: (v) => ((v - 32) * 5) / 9 + 273.15, fromBase: (v) => ((v - 273.15) * 9) / 5 + 32 },
+    ],
+  },
+  {
+    id: 'speed',
+    name: { en: 'Speed & Velocity', ar: 'السرعة' },
+    iconName: 'Gauge',
+    units: [
+      { id: 'mps', symbol: 'm/s', name: { en: 'Meters per second', ar: 'متر لكل ثانية' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'kmh', symbol: 'km/h', name: { en: 'Kilometers per hour', ar: 'كيلومتر في الساعة' }, toBase: (v) => v / 3.6, fromBase: (v) => v * 3.6 },
+      { id: 'mph', symbol: 'mph', name: { en: 'Miles per hour', ar: 'ميل في الساعة' }, toBase: (v) => v * 0.44704, fromBase: (v) => v / 0.44704 },
+      { id: 'knot', symbol: 'kn', name: { en: 'Knots', ar: 'عقدة بحرية' }, toBase: (v) => v * 0.514444, fromBase: (v) => v / 0.514444 },
+      { id: 'c', symbol: 'c', name: { en: 'Speed of Light', ar: 'سرعة الضوء' }, toBase: (v) => v * 299792458, fromBase: (v) => v / 299792458 },
+    ],
+  },
+  {
+    id: 'energy',
+    name: { en: 'Energy & Work', ar: 'الطاقة والشغل' },
+    iconName: 'Zap',
+    units: [
+      { id: 'j', symbol: 'J', name: { en: 'Joules', ar: 'جول' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'kj', symbol: 'kJ', name: { en: 'Kilojoules', ar: 'كيلوجول' }, toBase: (v) => v * 1000, fromBase: (v) => v / 1000 },
+      { id: 'cal', symbol: 'cal', name: { en: 'Calories', ar: 'سعر حراري' }, toBase: (v) => v * 4.184, fromBase: (v) => v / 4.184 },
+      { id: 'kcal', symbol: 'kcal', name: { en: 'Kilocalories', ar: 'كيلوسعر' }, toBase: (v) => v * 4184, fromBase: (v) => v / 4184 },
+      { id: 'kwh', symbol: 'kWh', name: { en: 'Kilowatt-hours', ar: 'كيلوواط ساعي' }, toBase: (v) => v * 3.6e6, fromBase: (v) => v / 3.6e6 },
+      { id: 'ev', symbol: 'eV', name: { en: 'Electronvolts', ar: 'إلكترون فولت' }, toBase: (v) => v * 1.602176634e-19, fromBase: (v) => v / 1.602176634e-19 },
+    ],
+  },
+  {
+    id: 'pressure',
+    name: { en: 'Pressure', ar: 'الضغط' },
+    iconName: 'Compass',
+    units: [
+      { id: 'pa', symbol: 'Pa', name: { en: 'Pascals', ar: 'باسكال' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'kpa', symbol: 'kPa', name: { en: 'Kilopascals', ar: 'كيلوباسكال' }, toBase: (v) => v * 1000, fromBase: (v) => v / 1000 },
+      { id: 'bar', symbol: 'bar', name: { en: 'Bar', ar: 'بار' }, toBase: (v) => v * 1e5, fromBase: (v) => v / 1e5 },
+      { id: 'atm', symbol: 'atm', name: { en: 'Standard Atmospheres', ar: 'ضغط جوي قياسي' }, toBase: (v) => v * 101325, fromBase: (v) => v / 101325 },
+      { id: 'psi', symbol: 'psi', name: { en: 'Pounds per sq inch', ar: 'رطل لكل بوصة مربعة' }, toBase: (v) => v * 6894.757, fromBase: (v) => v / 6894.757 },
+      { id: 'torr', symbol: 'Torr', name: { en: 'Torr (mmHg)', ar: 'تور (ملم زئبق)' }, toBase: (v) => v * 133.322, fromBase: (v) => v / 133.322 },
+    ],
+  },
+  {
+    id: 'force',
+    name: { en: 'Force', ar: 'القوة' },
+    iconName: 'Activity',
+    units: [
+      { id: 'n', symbol: 'N', name: { en: 'Newtons', ar: 'نيوتن' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'kn', symbol: 'kN', name: { en: 'Kilonewtons', ar: 'كيلونيوتن' }, toBase: (v) => v * 1000, fromBase: (v) => v / 1000 },
+      { id: 'lbf', symbol: 'lbf', name: { en: 'Pound-force', ar: 'رطل-قوة' }, toBase: (v) => v * 4.448222, fromBase: (v) => v / 4.448222 },
+      { id: 'dyn', symbol: 'dyn', name: { en: 'Dynes', ar: 'داين' }, toBase: (v) => v * 1e-5, fromBase: (v) => v / 1e-5 },
+    ],
+  },
+  {
+    id: 'data',
+    name: { en: 'Digital Data & Memory', ar: 'البيانات الرقمية والذاكرة' },
+    iconName: 'Database',
+    units: [
+      { id: 'b', symbol: 'B', name: { en: 'Bytes', ar: 'بايت' }, toBase: (v) => v, fromBase: (v) => v },
+      { id: 'kb', symbol: 'KB', name: { en: 'Kilobytes', ar: 'كيلوبايت' }, toBase: (v) => v * 1024, fromBase: (v) => v / 1024 },
+      { id: 'mb', symbol: 'MB', name: { en: 'Megabytes', ar: 'ميجابايت' }, toBase: (v) => v * 1024 ** 2, fromBase: (v) => v / 1024 ** 2 },
+      { id: 'gb', symbol: 'GB', name: { en: 'Gigabytes', ar: 'جيجابايت' }, toBase: (v) => v * 1024 ** 3, fromBase: (v) => v / 1024 ** 3 },
+      { id: 'tb', symbol: 'TB', name: { en: 'Terabytes', ar: 'تيرابايت' }, toBase: (v) => v * 1024 ** 4, fromBase: (v) => v / 1024 ** 4 },
+    ],
+  },
+];

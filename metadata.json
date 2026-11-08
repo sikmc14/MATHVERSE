@@ -1,0 +1,6 @@
+{
+  "name": "MATHVERSE - The Ultimate Math & Science Workspace",
+  "description": "Professional mathematics and scientific calculation platform featuring symbolic equation solving with step-by-step proofs, 2D/3D interactive graphing studio, scientific calculator, calculus engine, linear algebra, statistics, unit conversions, formula library, and AI image-to-math recognition in English and Arabic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
